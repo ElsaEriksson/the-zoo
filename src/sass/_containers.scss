@@ -1,0 +1,111 @@
+@use "/src/sass/mixins";
+
+.container--navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  top: 0;
+  background-color: rgb(217, 219, 213);
+  z-index: 100;
+}
+
+.container--menu {
+  list-style: none;
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+.container--AllAnimals {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 25%;
+}
+
+.container--oneAnimal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.container--image {
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    max-width: 80%;
+  }
+}
+
+.container--animal {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2%;
+  overflow: hidden;
+  padding-top: 125px;
+  padding-bottom: 100px;
+}
+
+.container--animalFed {
+  @extend .container--animal;
+  background-color: rgb(121, 175, 121);
+}
+
+.container--animalHungry {
+  @extend .container--animal;
+  background-color: rgb(194, 113, 113);
+}
+
+.container--animalFedFirstPage {
+  @extend .container--oneAnimal;
+  background-color: rgb(121, 175, 121);
+}
+
+.container--animalHungryFirstPage {
+  @extend .container--oneAnimal;
+  background-color: rgb(194, 113, 113);
+}
+
+.container--AllAnimals {
+  @include mixins.devices(tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-top: 15%;
+    .container--oneAnimal {
+      justify-content: center;
+    }
+  }
+  @include mixins.devices(desktop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding-top: 8%;
+    .container--oneAnimal {
+      height: 100%;
+    }
+  }
+}
+
+.container--animal {
+  @include mixins.devices(tablet) {
+    padding-top: 10%;
+  }
+}
+
+.container--image {
+  @include mixins.devices(tablet) {
+    img {
+      max-width: 50%;
+    }
+  }
+}

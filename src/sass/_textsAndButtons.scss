@@ -1,0 +1,118 @@
+@use "/src/sass/mixins";
+
+.headLine {
+  padding-left: 20px;
+}
+
+.text__link {
+  text-decoration: none;
+  color: black;
+}
+
+.text__short {
+  margin: 20px;
+}
+
+.container--text__fat {
+  padding-top: 15px;
+  font-size: 0.8rem;
+}
+
+.feedButton {
+  margin-top: 25px;
+  height: 30px;
+  width: 60px;
+}
+
+.text__fat {
+  font-weight: 800;
+}
+
+.text__long {
+  margin: 10%;
+  line-height: 140%;
+  text-align: center;
+}
+
+.container--AllAnimals {
+  @include mixins.devices(tablet) {
+    .text__short {
+      font-size: 1.4rem;
+    }
+    .animalName {
+      font-size: 1.6rem;
+    }
+  }
+  @include mixins.devices(desktop) {
+    .text__short {
+      font-size: 0.9rem;
+    }
+    .animalName {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.container--navigation {
+  @include mixins.devices(tablet) {
+    .text__link {
+      font-size: 1.8rem;
+    }
+    .headLine {
+      font-size: 2rem;
+    }
+  }
+  @include mixins.devices(desktop) {
+    .text__link {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.container--animal {
+  @include mixins.devices(tablet) {
+    .animalName {
+      font-size: 2rem;
+    }
+    .animalLatinName {
+      font-size: 1.4rem;
+    }
+    .text__fat {
+      font-size: 1.4rem;
+    }
+    .text__long {
+      font-size: 1.4rem;
+      width: 60%;
+    }
+    .feedButton {
+      height: 60px;
+      width: 120px;
+    }
+  }
+  @include mixins.devices(tablet) {
+    .animalName {
+      font-size: 1.2rem;
+    }
+    .animalLatinName {
+      font-size: 0.9rem;
+    }
+    .text__fat {
+      font-size: 0.9rem;
+    }
+    .text__long {
+      font-size: 0.9rem;
+    }
+    .feedButton {
+      height: 40px;
+      width: 80px;
+    }
+  }
+}
+
+main {
+  @include mixins.devices(tablet) {
+    .welcomeText {
+      font-size: 1.6rem;
+    }
+  }
+}
